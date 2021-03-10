@@ -1,0 +1,84 @@
+.main {
+  background-image: url(../../assests/images/Choose-bg.png);
+  background-size: cover;
+  background-position: start;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+.main h1 {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: xx-large;
+}
+.main p {
+  font-size: larger;
+}
+.Choosebox h3 {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: large;
+}
+.Choosebox {
+  width: 260px;
+  height: 260px;
+  margin: 20px;
+  font-family: helvetica, arial, sans-serif;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: 260px 260px;
+  background-position: center;
+}
+
+.Choosebox1 {
+  background-image: url(../../assests//images/hotel-bg.jpg);
+}
+.Choosebox2 {
+  background-image: url(../../assests//images/drug-bg.jpg);
+}
+.Choosebox3 {
+  background-image: url(../../assests//images/supermarket.jpg);
+}
+.Choosebox:hover {
+  cursor: pointer;
+  background-size: 350px 350px;
+  background-position: center;
+  transition: background-size ease-in 0.3s;
+}
+.choosebuissnessHeading {
+  text-align: center;
+}
+.over {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.main-over {
+  background: rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AccountBox-links {
+  color: #fff !important;
+  text-decoration: none;
+}

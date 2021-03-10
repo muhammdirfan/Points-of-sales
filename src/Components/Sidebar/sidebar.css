@@ -1,0 +1,50 @@
+.mainContainer {
+  color: #fff !important;
+}
+
+.ant-menu-item-selected {
+  color: #dbd5d250;
+  background: none !important;
+}
+
+.ant-layout-sider-children {
+  background-color: #178db7 !important;
+}
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+  border: 3px solid #050505;
+}
+
+.sideBar .links ul {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.sideBar .links a {
+  background: #fff !important;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.sideBar .links a button {
+  padding: 0px 60px;
+  margin-top: 12px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.sideBar .links li {
+  background-color: transparent !important;
+  color: #fff;
+}
+.sideBar .links li:hover {
+  background-color: #1898c5 !important;
+}
+.menuItems {
+  font-size: 13px;
+  font-weight: 500;
+}
