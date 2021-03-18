@@ -25,7 +25,7 @@ const CardFont = (props) => {
               width="30px"
             />
           </div>
-        </div>
+        </div> 
       }
     >
       <Meta title={props.description} style={styles.cardTitle} />

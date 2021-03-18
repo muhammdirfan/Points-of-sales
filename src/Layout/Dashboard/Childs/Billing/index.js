@@ -1,9 +1,13 @@
 import React from "react";
+ import EditableTable from "../../../../Components/Oders"
 
 const Billing = () => {
   return (
+    
     <>
-      <p>THis is Billing side</p>
+    
+    
+      < EditableTable />
     </>
   );
 };

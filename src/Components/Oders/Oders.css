@@ -1,0 +1,107 @@
+.ant-layout-content{
+    padding: 100px 50px 0px;
+    margin: 0px;
+    background-color: rgb(214, 213, 213);
+    height: auto !important;
+}
+.headSearch{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+.inputBtn{
+    width: 80%;
+
+}
+.inputBtn .input{
+    width: 50% !important;
+    /* height: 40px; */
+    border-radius: 5px !important;
+    outline: none;
+    border: none;
+    padding: 0px;
+}
+ .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+ width: 100%;
+  height: 40px;
+  padding: 4px 5px;
+  border-radius: 5px;
+    }
+ .ant-input-number{
+  border-radius: 5px;
+}
+ .ant-input-number{
+ margin-left: 16px;
+ }
+.ant-input-number-input {
+padding: 19px 12px;
+text-align: left;
+ background-color: transparent;
+ border: 0;
+ border-radius: 5px !important;
+ outline: 0;
+ -webkit-transition: all 0.3s linear;
+ transition: all 0.3s linear;
+-moz-appearance: textfield !important;
+   }
+.ant-input{
+    width: 15%;
+    padding: 8px;
+    margin-left: 1rem;
+    border-radius: 5px;
+}
+.ant-input:hover{
+    border: 1px solid rgba(0, 138, 252, 0.822);
+}
+            
+.inputBtn button{
+    margin-left: 10px;
+    width: 17%;
+    height: 40px;
+    background-color: #ffffff;;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: #000000;
+}
+.searchBtns{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.searchBtns button{
+    margin-left: 10px;
+    width: 30%;
+    height: 40px;
+    background-color: #ffffff;;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+}
+.searchBtns button:hover{
+    border: 1px solid rgba(0, 138, 252, 0.822);
+}
+.footerBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+}
+.footerBtn button{
+    width: 15%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    outline: none;
+    border: none; 
+    height: 6vh;
+    color:  #000000;
+}
+.footerBtn button:hover{
+    border: 1px solid rgba(0, 138, 252, 0.822);
+}
+
+
