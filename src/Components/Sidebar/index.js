@@ -51,12 +51,12 @@ const Sidebar = (props) => {
               {props.Sideitem3}
             </Menu.Item>
           </Link>
-          <Link to="/provider">
+          <Link to="/rooms">
             <Menu.Item key="4" icon={props.sideicon4} className="menuItems">
               {props.Sideitem4}
             </Menu.Item>
           </Link>
-          <Link to="/rooms">
+          <Link to="/provider">
             <Menu.Item key="5" icon={props.sideicon5} className="menuItems">
               {props.Sideitem5}
             </Menu.Item>
