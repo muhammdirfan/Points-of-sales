@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./dashboard.css";
 import "antd/dist/antd.css";
 import Styles from "./style.js";
@@ -64,41 +64,41 @@ class dashboard extends React.Component {
   };
 
   render() {
-    const routes = [
-      {
-        path: "/dash",
-        exact: true,
-        child: () => <ChildHome />,
-      },
-      {
-        path: "/sales",
-        child: () => <Sales />,
-      },
-      {
-        path: "/inventory",
-        child: () => <Inventory />,
-      },
-      {
-        path: "/customer",
-        child: () => <Customer />,
-      },
-      {
-        path: "/provider",
-        child: () => <Provider />,
-      },
-      {
-        path: "/rooms",
-        child: () => <Rooms />,
-      },
-      {
-        path: "/employees",
-        child: () => <Employees />,
-      },
-      {
-        path: "/billing",
-        child: () => <Billing />,
-      },
-    ];
+    // const routes = [
+    //   {
+    //     path: "/dash",
+    //     exact: true,
+    //     child: () => <ChildHome />,
+    //   },
+    //   {
+    //     path: "/sales",
+    //     child: () => <Sales />,
+    //   },
+    //   {
+    //     path: "/inventory",
+    //     child: () => <Inventory />,
+    //   },
+    //   {
+    //     path: "/customer",
+    //     child: () => <Customer />,
+    //   },
+    //   {
+    //     path: "/provider",
+    //     child: () => <Provider />,
+    //   },
+    //   {
+    //     path: "/rooms",
+    //     child: () => <Rooms />,
+    //   },
+    //   {
+    //     path: "/employees",
+    //     child: () => <Employees />,
+    //   },
+    //   {
+    //     path: "/billing",
+    //     child: () => <Billing />,
+    //   },
+    // ];
     return (
       <Router>
         <Layout>
@@ -167,7 +167,7 @@ class dashboard extends React.Component {
                 backgroundColor: "#d6d5d5",
               }}
             >
-              <Switch>
+              {/* <Switch>
                 {routes.map((route, index) => (
                   <Route
                     key={index}
@@ -176,7 +176,19 @@ class dashboard extends React.Component {
                     children={<route.child />}
                   />
                 ))}
-              </Switch>
+              </Switch> */}
+
+<switch>
+                                    <Route path="/childhome" component={ChildHome} /> 
+                                    <Route path="/sales" component={Sales}/>
+                                    <Route path="/inventary" component={Inventory}/>
+                                    <Route path="/customer" component={Customer}/>
+                                    <Route path="/provider" component={Provider}/>
+                                    <Route path="/rooms" component={Rooms}/>
+                                    <Route path="/employees" component={Employees}/>
+                                    <Route path="/billing" component={Billing}/>
+                                    <Redirect to="/childhome" />
+                                </switch>
             </Content>
           </Layout>
           {/* body layout ends here */}

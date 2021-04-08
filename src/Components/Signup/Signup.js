@@ -1,6 +1,7 @@
 import React from "react";
 import Styles from "./Styles";
 import "./signup.css";
+import "../Login/Styles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Signup = (props) => {
@@ -52,7 +53,7 @@ const Signup = (props) => {
                   style={Styles.BoldLink}
                   href="#"
                 >
-                  Sign In
+                    Sign In
                 </Link>
               </a>
             </div>

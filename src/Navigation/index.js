@@ -9,12 +9,12 @@ const Routing = () => {
   return (
     <BrowserRouter>
       <div>
-        <Switch>
+      <Switch>
+          <Route exact path="/" component={ChooseBuissness}/>
           <Route path="/Login" component={Login} />
           <Route path="/Signup" component={Signup} />
-          <Route path="/dashboard" component={Dashboard} />
           <Route path="/ChooseBuissness" component={ChooseBuissness} />
-          <Redirect to="/ChooseBuissness" />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </div>
     </BrowserRouter>
