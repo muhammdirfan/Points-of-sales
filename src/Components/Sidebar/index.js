@@ -7,29 +7,20 @@ import styles from "./style";
 // import antd
 import { Menu, Row, Col } from "antd";
 
-// Icons
-
-import {
-  WindowsOutlined,
-  BgColorsOutlined,
-  FontSizeOutlined,
-} from "@ant-design/icons";
 
 // images
 import Logo from "../../assests/images/ZLogo.png";
 
-const { SubMenu } = Menu;
 
 const Sidebar = (props) => {
   return (
     <Row className="sideBar">
-      <Col span={24}>
-        <div className="logo" style={styles.logoDiv}>
-          <img src={Logo} alt="LOGO" style={styles.logo} />
-        </div>
-      </Col>
       <Col span={24} className="links">
+
         <Menu mode="inline" className="mainContainer">
+          <div className="logo" style={styles.logoDiv}>
+            <img src={Logo} alt="LOGO" style={styles.logo} />
+          </div>
           <Link to="/dash">
             <Menu.Item key="1" icon={props.sideicon0} className="menuItems ">
               {props.Sideitem0}

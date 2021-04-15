@@ -1,27 +1,17 @@
-const Styles = {
-
+const styles = {
     searchbar: {
-        marginBottom: '20px',
+        marginBottom: '20px'
     },
     hbtn: {
-        marginTop: '20px',
+        marginTop: '20px'
     },
-
     Salestablebody: {
         background: 'white',
         display: 'block',
         padding: '20px 40px',
         borderRadius: '10px',
+        marginTop: '30px',
         boxShadow: ' 0 2px 2px 0 rgb(153 153 153 / 40%), 0 3px 1px -2px rgb(153 153 153 / 40%), 0 1px 5px 0 rgb(153 153 153 / 60%)',
-    },
-
-    salesRow: {
-        padding: '20px 0',
-        display: 'flex',
-        justifyContent: 'space-between',
-    },
-    salesRowC1: {
-        paddingRight: '20px',
     },
     salesTableicon: {
         background: 'linear-gradient( to right, #ec407a, #d81b60)',
@@ -42,11 +32,5 @@ const Styles = {
         fontWeight: '400',
 
     },
-
-
-};
-
-
-
-
-export default Styles;
+}
+export default styles;

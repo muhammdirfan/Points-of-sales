@@ -17,14 +17,10 @@ const styles = {
     width: "100px",
     height: "40px",
   },
-  mainBox: {
-    display: "flex",
-    justifyContent: "center",
-    margin: "0 auto",
-  },
   cardBox: {
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
   },
 };
 

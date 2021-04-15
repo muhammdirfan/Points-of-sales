@@ -1,26 +1,44 @@
-.dash-card {
-  background: #1898c5;
-  background-size: 221px 115px;
-}
 .card {
   box-sizing: border-box;
+  border-radius: 8px;
 }
-.dash-card:hover {
-  background: #178db7;
-}
-.card:hover {
-  border-bottom: 2px solid #178db7;
-  transition: all ease-in-out 0.2s;
-}
+
 .ant-card {
   box-shadow: 0px 0px 19px -8px !important;
-  background-color: url(../../assests/images/salesg.jpg);
 }
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+
 .cardImgDiv {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.iconContainer {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: linear-gradient(to right, #ec407a, #d81b60);
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card hr {
+  background: linear-gradient(to right, #ec407a, #d81b60) !important;
+  height: 2px;
+  border: none;
+}
+
+.iconContainer .innerCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

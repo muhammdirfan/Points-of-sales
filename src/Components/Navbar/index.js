@@ -11,9 +11,9 @@ import { Layout, Menu, Breadcrumb, Row, Col, Dropdown, Card } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  BellOutlined,
+  BellFilled,
   UnorderedListOutlined,
-  MailOutlined,
+  MailFilled ,
   MenuOutlined,
   DownOutlined,
   KeyOutlined,
@@ -25,6 +25,7 @@ import {
 // Images
 // import Logo from "../../assests/images/ZLogo.png";
 import pc1 from "../../assests/images/ZLogo.png";
+import pc2 from "../../assests/images/avatar.png";
 
 const { Header, Content, Footer } = Layout;
 
@@ -36,6 +37,7 @@ const menu = (
           <img src={pc1} alt="" style={Styles.navCardP1} />
           <h4 style={Styles.navCardh4}>User Name</h4>
           <p style={Styles.navCardp}>User Email</p>
+          <p style={Styles.navCardp}>Edit Title</p>
           <hr style={Styles.navCardhr} />
         </Col>
       </Row>
@@ -84,7 +86,7 @@ const DropdownMenu = (
     <Row style={Styles.navDropdownMenuR2}>
       <Col span={6}>
         <a href="" style={Styles.navA} style={Styles.navCardR1}>
-          <BellOutlined
+          <BellFilled 
             style={Styles.navicons}
             style={Styles.navDropdownMenuAnkerTag}
           />
@@ -100,7 +102,7 @@ const DropdownMenu = (
     <Row style={Styles.navDropdownMenuR2}>
       <Col span={6}>
         <a href="" style={Styles.navA} style={Styles.navCardR1}>
-          <MailOutlined
+        <MailFilled
             style={Styles.navicons}
             style={Styles.navDropdownMenuAnkerTag}
           />
@@ -112,12 +114,13 @@ const DropdownMenu = (
         </a>
       </Col>
     </Row>
+  
     <Row style={Styles.navDropdownMenuR2}>
       <Col span={6}>
         <a href="" style={Styles.navCardR1}>
           <Dropdown overlay={menu} trigger={["click"]}>
             <img
-              src={pc1}
+              src={pc2}
               alt=""
               style={Styles.navP}
               className="ant-dropdown-link"
@@ -127,9 +130,7 @@ const DropdownMenu = (
         </a>
       </Col>
       <Col span={18}>
-        <Dropdown overlay={menu}>
           <a style={Styles.navDropdownMenuAnkerTag}>Profile</a>
-        </Dropdown>
       </Col>
     </Row>
   </Card>
@@ -139,14 +140,14 @@ const Navbar = (props) => {
   return (
     <Row style={Styles.header}>
       <Col style={Styles.hPart1}>
-        <div className="collapse" style={{ color: "white" }}>
+        <div className="collapse" style={Styles.navcolapse} className="navcolapse">
           {props.button}
         </div>
         <div style={Styles.navMenuList} className="navMenuList">
           <ul style={Styles.navUl}>
             <a href="">
               <li>
-                <h1 style={Styles.navHeading}>{props.businessTitle}Hotal</h1>
+                <h1 style={Styles.navHeading}>{props.businessTitle}Hotel</h1>
               </li>
             </a>
           </ul>
@@ -156,19 +157,19 @@ const Navbar = (props) => {
         <ul style={Styles.navUl}>
           <a href="" style={Styles.navA}>
             <li style={Styles.navLi}>
-              <BellOutlined style={Styles.navicons} />
+              <BellFilled  style={Styles.navicons} />
             </li>
           </a>
           <a href="" style={Styles.navA}>
             <li>
-              <MailOutlined style={Styles.navicons} />
+            <MailFilled style={Styles.navicons} />
             </li>
           </a>
           <a href="">
             <li>
               <Dropdown overlay={menu} trigger={["click"]}>
                 <img
-                  src={pc1}
+                  src={pc2}
                   alt=""
                   style={Styles.navP}
                   className="ant-dropdown-link"
@@ -182,7 +183,7 @@ const Navbar = (props) => {
       <Col className="nav_dropdown_menu">
         <Dropdown overlay={DropdownMenu} trigger={["click"]}>
           <MenuOutlined
-            style={Styles.navicons}
+            style={Styles.navmenuicon}
             className="ant-dropdown-link"
             onClick={(e) => e.preventDefault()}
           />

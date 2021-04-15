@@ -18,9 +18,6 @@ import ChildHome from "../../Layout/Dashboard/Childs/ChildHome/index.js";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  ShoppingCartOutlined,
-  UnorderedListOutlined,
-  LineChartOutlined,
 } from "@ant-design/icons";
 import styles from "./style.js";
 
@@ -42,8 +39,7 @@ class dashboard extends React.Component {
     super(props);
     this.state = {
       collapsed: false,
-      width: { marginLeft: "200px" },
-      navWidth: { position: "fixed", width: "85%", zIndex: 1 },
+      width: { marginLeft: "250px" },
     };
   }
 
@@ -51,59 +47,58 @@ class dashboard extends React.Component {
     if (this.state.collapsed) {
       this.setState({
         collapsed: !this.state.collapsed,
-        width: { marginLeft: "200px" },
-        navWidth: { position: "fixed", width: "85%", zIndex: 1 },
+        width: { marginLeft: "250px" },
       });
     } else {
       this.setState({
         collapsed: !this.state.collapsed,
         width: { marginLeft: "0px" },
-        navWidth: { position: "fixed", width: "100%", zIndex: 1 },
       });
     }
   };
 
   render() {
-    // const routes = [
-    //   {
-    //     path: "/dash",
-    //     exact: true,
-    //     child: () => <ChildHome />,
-    //   },
-    //   {
-    //     path: "/sales",
-    //     child: () => <Sales />,
-    //   },
-    //   {
-    //     path: "/inventory",
-    //     child: () => <Inventory />,
-    //   },
-    //   {
-    //     path: "/customer",
-    //     child: () => <Customer />,
-    //   },
-    //   {
-    //     path: "/provider",
-    //     child: () => <Provider />,
-    //   },
-    //   {
-    //     path: "/rooms",
-    //     child: () => <Rooms />,
-    //   },
-    //   {
-    //     path: "/employees",
-    //     child: () => <Employees />,
-    //   },
-    //   {
-    //     path: "/billing",
-    //     child: () => <Billing />,
-    //   },
-    // ];
+    const routes = [
+      {
+        path: "/dash",
+        exact: true,
+        child: () => <ChildHome />,
+      },
+      {
+        path: "/sales",
+        child: () => <Sales />,
+      },
+      {
+        path: "/inventory",
+        child: () => <Inventory />,
+      },
+      {
+        path: "/customer",
+        child: () => <Customer />,
+      },
+      {
+        path: "/provider",
+        child: () => <Provider />,
+      },
+      {
+        path: "/rooms",
+        child: () => <Rooms />,
+      },
+      {
+        path: "/employees",
+        child: () => <Employees />,
+      },
+      {
+        path: "/billing",
+        child: () => <Billing />,
+      },
+    ];
     return (
       <Router>
         <Layout>
           {/* sidebar starts here */}
           <Sider
+            width='250px'
             className="sider"
             breakpoint="lg"
             collapsedWidth="0"
@@ -143,7 +138,7 @@ class dashboard extends React.Component {
 
           {/* body layout starts here */}
           <Layout
-            style={({ background: "#f0f2f5" }, this.state.width)}
+            style={({ background: "#eeeeee" }, this.state.width)}
             className="site-layout"
           >
             {/* header starts here */}
@@ -162,12 +157,13 @@ class dashboard extends React.Component {
 
             <Content
               style={{
-                padding: "100px 50px 0px",
+                padding: "0px 50px",
                 margin: "0px",
-                backgroundColor: "#d6d5d5",
+                minHeight: "100vh",
+                backgroundColor: "#eeeeee",
               }}
             >
-              {/* <Switch>
+              <Switch>
                 {routes.map((route, index) => (
                   <Route
                     key={index}
@@ -176,24 +172,13 @@ class dashboard extends React.Component {
                     children={<route.child />}
                   />
                 ))}
-              </Switch> */}
-
-<switch>
-                                    <Route path="/childhome" component={ChildHome} /> 
-                                    <Route path="/sales" component={Sales}/>
-                                    <Route path="/inventary" component={Inventory}/>
-                                    <Route path="/customer" component={Customer}/>
-                                    <Route path="/provider" component={Provider}/>
-                                    <Route path="/rooms" component={Rooms}/>
-                                    <Route path="/employees" component={Employees}/>
-                                    <Route path="/billing" component={Billing}/>
-                                    <Redirect to="/childhome" />
-                                </switch>
+                <Redirect to="/dash" />
+              </Switch>
             </Content>
           </Layout>
           {/* body layout ends here */}
         </Layout>
-      </Router>
+      </Router >
     );
   }
 }

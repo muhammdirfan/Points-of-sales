@@ -1,32 +1,48 @@
 .nav_dropdown_menu {
-  display: none !important;
+    display: none !important;
 }
+
 .DropdownMenuCard2 {
-  background: #1687af;
+    background: linear-gradient( to right, #ffffff, #dfdede);
+    color: #555555;
 }
+
 .ant-layout-header {
-  background-color: #1898c5 !important;
-  /* padding-left: 0px !important; */
+    background-color: #eee !important;
+    box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%);
 }
+
 .navMenuRow2:hover {
-  background: rgb(226, 226, 226);
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+    background: rgb(226, 226, 226);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.navcolapse {
+    box-shadow: 1px 4px 4px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 60%), 0 1px 5px 0 rgb(153 153 153 / 48%);
 }
 
 @media (max-width: 450px) {
-  .nav_dropdown_menu {
-    display: block !important;
-  }
-  .nav_menu_items {
-    display: none !important;
-  }
-  .helloPakistan {
-    position: absolute !important;
-    top: -136px !important;
-    left: -54px !important;
-  }
+    .nav_dropdown_menu {
+        display: block !important;
+    }
+    .ant-dropdown-link:hover {
+        box-shadow: 1px 4px 4px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 60%), 0 1px 5px 0 rgb(153 153 153 / 48%);
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    .nav_menu_items {
+        display: none !important;
+    }
+    .helloPakistan {
+        position: absolute !important;
+        top: -136px !important;
+        left: -54px !important;
+    }
 }

@@ -18,14 +18,15 @@ import { DownOutlined } from '@ant-design/icons';
 import  "./Oders.css"
 const originData = [];
 
-// for (let i = 0; i < 6; i++) {
-//   originData.push({
-//     key: i.toString(),
-//     name: `Edrward ${i}`,
-//     age: 32,
-//     address: `London Park no. ${i}`,
-//   });
-// }
+for (let i = 0; i < 6; i++) {
+  originData.push({
+    key: i.toString(),
+    Menu: `Edrward ${i}`,
+    Quantity: 2,
+    Price: 200,
+    TotelAmount: 200  ,
+  });
+}
 
 const EditableCell = ({
   editing,
@@ -45,6 +46,7 @@ const EditableCell = ({
           name={dataIndex}
           style={{
             margin: 0,
+            width:200,
           }}
           rules={[
             {
@@ -71,9 +73,10 @@ const EditableTable = () => {
 
   const edit = (record) => {
     form.setFieldsValue({
-      name: '',
-      age: '',
-      address: '',
+      Menu: '',
+      Quantity: '',
+      Price: '',
+      TotelAmount:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -194,9 +197,9 @@ const EditableTable = () => {
 
  
   return (
-    <Form form={form} component={false}>
+    <Form form={form} component={false} >
       
-       <div className="headSearch">
+       <div className="headSearch" style={{marginTop:'30px'}}>
            <div className="inputBtn">
 
            <Select
@@ -226,7 +229,10 @@ const EditableTable = () => {
            
            <InputNumber min={1} max={1000}  defaultValue={"0"} onChange={onChange} placeholder="Quantity"/>
             
-           <Input placeholder="Price"/>
+            {/* <div className="priceInput"> */}
+            <Input placeholder="Price" className="inputBox"/>
+            {/* </div> */}
+        
            </div>
           <div className="searchBtns">
               
@@ -248,7 +254,7 @@ const EditableTable = () => {
         pagination={{
           onChange: cancel,
         }}
-    
+        
       />
 
       <div className="footerBtn">

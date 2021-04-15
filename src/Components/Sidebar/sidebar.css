@@ -1,14 +1,37 @@
 .mainContainer {
   color: #fff !important;
 }
+.logoDiv {
+  background-color: rgb(24, 152, 197);
+  padding: 12px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 100px;
+  height: 65px;
+  margin-top: 0.5rem;
+  margin-bottom: 10px;
+}
+.logo img {
+  width: 100%;
+  height: 9vh;
+}
 
 .ant-menu-item-selected {
   color: #dbd5d250;
   background: none !important;
 }
+.ant-col ant-col-24 links {
+  height: 42.8em;
+}
 
 .ant-layout-sider-children {
-  background-color: #178db7 !important;
+  background-image: url(../../assests/images/supermarket.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .ant-menu-vertical .ant-menu-item::after,
 .ant-menu-vertical-left .ant-menu-item::after,
@@ -20,6 +43,9 @@
 .sideBar .links ul {
   background-color: transparent !important;
   border: none !important;
+  padding-left: 13px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .sideBar .links a {
@@ -40,11 +66,17 @@
 .sideBar .links li {
   background-color: transparent !important;
   color: #fff;
+  /* padding: 0px 0px 3px 0px; */
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-right: 20px;
 }
 .sideBar .links li:hover {
-  background-color: #1898c5 !important;
+  background-color: #b4adad7e !important;
+  /* border-radius: 37px 1px 0px 36px; */
+  border-radius: 10px !important;
 }
 .menuItems {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
 }

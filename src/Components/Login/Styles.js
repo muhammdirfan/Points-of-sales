@@ -12,7 +12,7 @@ const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    height: "100%",
+    height: "25rem",
     justifyContent: "space-evenly",
   },
   MutedLink: {

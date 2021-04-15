@@ -36,10 +36,10 @@ const Rooms = () => {
         style={Styles.From}
       >
         <div>
-          <Row gutter={(20, 20)} justify="center">
-            <h2 style={Styles.RoomsHeading}>Reservation Details</h2>
+          <h2 style={Styles.RoomsHeading}>Reservation Details</h2>
+          <Row className="main-row" gutter={(20, 20)}>
             <Col span={24} />
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="firstname"
                 rules={[
@@ -49,7 +49,7 @@ const Rooms = () => {
                 <Input placeholder="First Name" />
               </Form.Item>
             </Col>
-            <Col className="gutter-row" xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col className="gutter-row" xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="lastname"
                 rules={[
@@ -61,7 +61,7 @@ const Rooms = () => {
             </Col>
             <Col span={24} />
 
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="address"
                 rules={[
@@ -71,7 +71,7 @@ const Rooms = () => {
                 <Input placeholder="Address" />
               </Form.Item>
             </Col>
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item>
                 {/* <label>Room Type</label> */}
                 <Select placeholder="Room Type">
@@ -88,7 +88,7 @@ const Rooms = () => {
             </Col>
 
             <Col span={24} />
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="phone"
                 rules={[
@@ -105,35 +105,35 @@ const Rooms = () => {
                 />
               </Form.Item>
             </Col>
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item name={["user", "email"]} rules={[{ type: "email" }]}>
                 <Input placeholder="Email" />
               </Form.Item>
             </Col>
             <Col span={24} />
-            <Col xl={4} lg={8} md={8} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item name="cnic">
                 <Input placeholder="CNIC" />
               </Form.Item>
             </Col>
-            <Col xl={4} lg={8} md={8} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item name="rent">
                 <Input placeholder="Rent" />
               </Form.Item>
             </Col>
-            <Col xl={4} lg={8} md={8} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item name="days">
                 <Input placeholder="No of days" />
               </Form.Item>
             </Col>
             <Col span={24} />
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item type="date">
                 <label>Check-In Date</label>
                 <Input type="date" />
               </Form.Item>
             </Col>
-            <Col xl={6} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item type="date">
                 <label>Check-Out Date</label>
                 <Input type="date" />
@@ -141,30 +141,30 @@ const Rooms = () => {
             </Col>
             <Col span={24} />
 
-            <Col xl={12} lg={12} md={24} sm={24} xs={24}>
+            <Col xl={24} lg={12} md={24} sm={24} xs={24}>
               <Row justify="center">
-                <Col lg={6} xl={5} md={4} sm={6} xs={12}>
+                <Col lg={6} xl={6} md={4} sm={6} xs={12}>
                   <Form.Item>
                     <label>Adults</label>
                     <br></br>
                     <InputNumber min={0} max={100} />
                   </Form.Item>
                 </Col>
-                <Col lg={6} xl={5} md={4} sm={6} xs={12}>
+                <Col lg={6} xl={6} md={4} sm={6} xs={12}>
                   <Form.Item>
                     <label>Children</label>
                     <br></br>
                     <InputNumber min={0} max={100} />
                   </Form.Item>
                 </Col>
-                <Col lg={6} xl={5} md={4} sm={6} xs={12}>
+                <Col lg={6} xl={6} md={4} sm={6} xs={12}>
                   <Form.Item>
                     <label>Total</label>
                     <br></br>
                     <InputNumber min={0} max={100} />
                   </Form.Item>
                 </Col>
-                <Col lg={6} xl={5} md={4} sm={6} xs={12}>
+                <Col lg={6} xl={6} md={4} sm={6} xs={12} justify="end">
                   <Form.Item>
                     <label>Room</label>
                     <br></br>

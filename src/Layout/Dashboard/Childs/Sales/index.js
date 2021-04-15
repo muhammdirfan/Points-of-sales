@@ -1,225 +1,119 @@
-import React, { useState } from "react";
-import {
-  Table,
-  Input,
-  InputNumber,
-  Popconfirm,
-  Form,
-  Typography,
-  Button,
-  Row,
-  Col
-} from "antd";
-import "./Oders.css";
-import Styles from "./style";
-import { styles } from "ansi-colors";
-const originData = [];
+import React from "react";
+import "antd/dist/antd.css";
+import "./Sales.css";
+import { Table, Row, Col, Button, Input } from "antd";
+import styles from "./style";
+
+// Ant design icon
+import { TabletFilled } from "@ant-design/icons";
+
 const { Search } = Input;
-const onSearch = value => console.log(value);
 
-// for (let i = 0; i < 100; i++) {
-//   originData.push({
-//     key: i.toString(),
-//     name: `Edrward ${i}`,
-//     age: 32,
-//     address: `London Park no. ${i}`,
-//   });
-// }
+const columns = [
+  {
+    title: "Order Id",
+    dataIndex: "order_id",
+    key: "order_id",
+  },
+  {
+    title: "Table No",
+    dataIndex: "table_no",
+    key: "table_no",
+  },
+  {
+    title: "Menu",
+    dataIndex: "menu",
+    key: "1",
+  },
+  { title: "Total Amount", dataIndex: "total_amount", key: "13" },
+  {
+    title: "Action",
+    key: "operation",
+    render: () => (
+      <div>
+        <a>Edit</a>
+        <a style={{ marginLeft: "10px" }}>Delete</a>
+      </div>
+    ),
+  },
+];
 
-const EditableCell = ({
-  editing,
-  dataIndex,
-  title,
-  inputType,
-  record,
-  index,
-  children,
-  ...restProps
-}) => {
-  const inputNode = inputType === "number" ? <InputNumber /> : <Input />;
+const data = [
+  {
+    order_id: "111",
+    table_no: "n2",
+    menu: "biryani",
+    total_amount: "3000/-",
+  },
+  {
+    order_id: "131",
+    table_no: "A77",
+    menu: "biryani,chai",
+    total_amount: "5000/-",
+  },
+  {
+    order_id: "111",
+    table_no: "n2",
+    menu: "biryani",
+    total_amount: "3000/-",
+  },
+  {
+    order_id: "131",
+    table_no: "A77",
+    menu: "biryani,chai",
+    total_amount: "5000/-",
+  },
+];
+
+const onSearch = (value) => console.log(value);
+
+const Sales = () => {
   return (
-    <td {...restProps}>
-      {editing ? (
-        <Form.Item
-          name={dataIndex}
-          style={{
-            margin: 0
-          }}
-          rules={[
-            {
-              required: true,
-              message: `Please Input ${title}!`
-            }
-          ]}
-        >
-          {inputNode}
-        </Form.Item>
-      ) : (
-        children
-      )}
-    </td>
-  );
-};
-
-const EditableTable = () => {
-  const [form] = Form.useForm();
-  const [data, setData] = useState(originData);
-  const [editingKey, setEditingKey] = useState("");
-
-  const isEditing = record => record.key === editingKey;
-
-  const edit = record => {
-    form.setFieldsValue({
-      name: "",
-      age: "",
-      address: "",
-      ...record
-    });
-    setEditingKey(record.key);
-  };
-
-  const cancel = () => {
-    setEditingKey("");
-  };
-
-  const save = async key => {
-    try {
-      const row = await form.validateFields();
-      const newData = [...data];
-      const index = newData.findIndex(item => key === item.key);
-
-      if (index > -1) {
-        const item = newData[index];
-        newData.splice(index, 1, { ...item, ...row });
-        setData(newData);
-        setEditingKey("");
-      } else {
-        newData.push(row);
-        setData(newData);
-        setEditingKey("");
-      }
-    } catch (errInfo) {
-      console.log("Validate Failed:", errInfo);
-    }
-  };
-
-  const columns = [
-    {
-      title: "Order Id",
-      dataIndex: "order_id",
-      width: "30%",
-      editable: true
-    },
-    {
-      title: "Table No",
-      dataIndex: "table_no",
-      editable: true
-    },
-    {
-      title: "Menu",
-      dataIndex: "menu",
-      width: "30%",
-      editable: true
-    },
-    {
-      title: "Total Amount",
-      dataIndex: "total_amount",
-      editable: true
-    },
-    {
-      title: "operation",
-      dataIndex: "operation",
-      render: (_, record) => {
-        const editable = isEditing(record);
-        return editable ? (
-          <span>
-            <a
-              href="javascript:;"
-              onClick={() => save(record.key)}
-              style={{
-                marginRight: 8
-              }}
-            >
-              Save
-            </a>
-            <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-              <a>Cancel</a>
-            </Popconfirm>
-          </span>
-        ) : (
-          <Typography.Link
-            disabled={editingKey !== ""}
-            onClick={() => edit(record)}
-          >
-            Edit
-          </Typography.Link>
-        );
-      }
-    }
-  ];
-  const mergedColumns = columns.map(col => {
-    if (!col.editable) {
-      return col;
-    }
-
-    return {
-      ...col,
-      onCell: record => ({
-        record,
-        inputType: col.dataIndex === "age" ? "number" : "text",
-        dataIndex: col.dataIndex,
-        title: col.title,
-        editing: isEditing(record)
-      })
-    };
-  });
-  return (
-    <Form form={form} component={false}>
-      <Row style={Styles.salesRow}>
-        <Col span={12}>
-          <Search
-            placeholder="input search text"
-            allowClear
-            enterButton="Search"
-            size="large"
-            onSearch={onSearch}
-          />
-        </Col>
-      </Row>
-
-      <Table
-        components={{
-          body: {
-            cell: EditableCell
-          }
-        }}
-        bordered
-        dataSource={data}
-        columns={mergedColumns}
-        rowClassName="editable-row"
-        pagination={{
-          onChange: cancel
-        }}
-      />
-      <Row style={Styles.salesRow}>
-      <Row>
-        <Col style={Styles.salesRowC1}>
-          {" "}
-          <Button type="primary">Create Report</Button>
-        </Col>
-        <Col>
-          {" "}
-          <Button type="primary">Print PDF</Button>
-        </Col>
+    <>
+      <Row style={styles.Salestablebody}>
+        <Row>
+          <Col style={styles.salesTableicon}>
+            <TabletFilled />
+          </Col>
+          <Col>
+            <h2 style={styles.salesTableheading}>Sales and Reporting</h2>
+          </Col>
         </Row>
-        <Col>
-          {" "}
-          <Button type="danger">Clear History</Button>
-        </Col>
+
+        <Row style={styles.searchbar}>
+          <Col xs={24} sm={24} md={8} lg={8} xl={8} style={styles.hbtn}>
+            <Search
+              placeholder="input search text"
+              allowClear
+              enterButton="Search"
+              size="large"
+              onSearch={onSearch}
+            />
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={16} xl={16}>
+            <Row justify="end" gutter={(0, 20)} style={{alignItems: 'center',}}>
+              <Col>
+                <Button type="primary" style={styles.hbtn}>
+                  Create Report
+                </Button>
+              </Col>
+              <Col>
+                <Button type="primary" style={styles.hbtn}>
+                  Print PDF
+                </Button>
+              </Col>
+              <Col>
+                <Button type="danger" style={styles.hbtn}>
+                  Clear History
+                </Button>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+        <Table columns={columns} dataSource={data} className="salesTable"/>
       </Row>
-    </Form>
+    </>
   );
 };
 
-// ReactDOM.render(<EditableTable />, mountNode);
-export default EditableTable;
+export default Sales;

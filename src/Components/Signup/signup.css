@@ -1,5 +1,5 @@
 .input::placeholder {
-  color: rgb(95, 95, 95);
+  color: rgba(200, 200, 200, 1);
 }
 .input:focus {
   outline: none;

@@ -11,6 +11,12 @@
     height: 40px;
     margin-bottom: 1rem;
 }
+.ant-row ant-form-item ant-form-item-with-help ant-form-item-has-error{
+    row-gap: 0px;
+    margin: 0px;
+    width: 100px !important;
+}
+
 .inputBtn{
     width: 80%;
 
@@ -46,7 +52,19 @@ text-align: left;
  transition: all 0.3s linear;
 -moz-appearance: textfield !important;
    }
-.ant-input{
+   .ant-select:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+    margin: 0;
+    padding: 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-top: 5px  !important;
+}
+
+.inputBox{
     width: 15%;
     padding: 8px;
     margin-left: 1rem;
@@ -66,15 +84,6 @@ text-align: left;
     border-radius: 3px;
     color: #000000;
 }
-.footerBtn button {
-    width: 15%;
-    background-color: #03a9f4;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    height: 6vh;
-    color: #ffffff;
-}
 .searchBtns{
     width: 30%;
     display: flex;
@@ -85,7 +94,7 @@ text-align: left;
     margin-left: 10px;
     width: 30%;
     height: 40px;
-    background-color: #03a9f4;
+    background-color: #2196f3;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -99,6 +108,15 @@ text-align: left;
     align-items: center;
     justify-content: space-between;
     height: 15vh;
+}
+.footerBtn button{  
+        width: 15%;
+        background-color: #2196f3;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        height: 6vh;
+        color: #ffffff;
 }
 .footerBtn button:hover{
     border: 1px solid rgba(0, 138, 252, 0.822);

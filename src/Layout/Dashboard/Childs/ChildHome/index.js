@@ -19,12 +19,11 @@ const childHome = () => {
     <Layout>
       <Content
         style={{
-          padding: "0px 50px",
-          margin: "0px",
-          backgroundColor: "#d6d5d5",
+          backgroundColor: "#eeeeee",
+          padding: "50px 0px"
         }}
       >
-        <Row gutter={[0, 40]} style={(styles.mainBox, { marginTop: "20px" })}>
+        <Row gutter={[40, 40]}>
           <Col xs={24} sm={22} md={12} lg={8} xl={8} style={styles.cardBox}>
             <Link to="/sales">
               <Cards icon={saleslogo} description={"Sales and Reporting"} />
@@ -62,11 +61,6 @@ const childHome = () => {
             </Link>
           </Col>
         </Row>
-
-        <div
-          className="site-layout-background"
-          style={{ padding: 24, minHeight: 380 }}
-        ></div>
       </Content>
     </Layout>
   );
