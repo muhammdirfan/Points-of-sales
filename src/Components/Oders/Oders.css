@@ -23,11 +23,13 @@
 }
 .inputBtn .input{
     width: 50% !important;
-    /* height: 40px; */
+    border: 1px solid #e0d8d8 !important;
     border-radius: 5px !important;
     outline: none;
-    border: none;
     padding: 0px;
+}
+.inputBtn .input:hover{
+    border: 1px solid rgba(0, 138, 252, 0.822) !important;
 }
  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
  width: 100%;
@@ -65,15 +67,18 @@ text-align: left;
 }
 
 .inputBox{
-    width: 15%;
-    padding: 8px;
+    width: 15% !important;
     margin-left: 1rem;
     border-radius: 5px;
+    border: 1px solid #e0d8d8 !important;
+    padding: 16px !important;
+    border-radius: 5px !important;
 }
+
 .ant-input:hover{
-    border: 1px solid rgba(0, 138, 252, 0.822);
+    border: 1px solid rgba(0, 138, 252, 0.822) !important;
 }
-            
+
 .inputBtn button{
     margin-left: 10px;
     width: 17%;

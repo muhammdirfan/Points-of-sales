@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import "./style.css";
-import { Table, Input, Row, Col, Button } from 'antd';
+import { Table, Input, Row, Col, Button,Popconfirm, Typography, } from 'antd';
 import { TabletFilled } from "@ant-design/icons";
 import styles from "./style";
 
@@ -39,13 +39,52 @@ const columns = [
     width: 30,
     key: 'operation',
     fixed: 'right',
+    render: (_, record) => {
+      const editable = isEditing(record);
+      return editable ? (
+        <span>
+          <a
+            href="javascript:;"
+            onClick={() => save(record.key)}
+            style={{
+              marginRight: 8,
+            }}
+          >
+            Save
+          </a>
+          <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
+            <a>Cancel</a>
+          </Popconfirm>
+        </span>
+      ) : (
+        <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
+          Edit
+        </Typography.Link>
+      );
+    },
     render: () => <div>
-      <a>Edit</a>
       <a style={{ marginLeft: '10px' }}>Delete</a>
     </div>,
 
   },
 ];
+
+const mergedColumns = columns.map((col) => {
+  if (!col.editable) {
+    return col;
+  }
+
+  return {
+    ...col,
+    onCell: (record) => ({
+      record,
+      inputType: col.dataIndex === 'age' ? 'number' : 'text',
+      dataIndex: col.dataIndex,
+      title: col.title,
+      editing: isEditing(record),
+    }),
+  };
+});
 
 const data = [
   {

@@ -228,11 +228,7 @@ const EditableTable = () => {
            {/* <input  placeholder="Search" />  */}
            
            <InputNumber min={1} max={1000}  defaultValue={"0"} onChange={onChange} placeholder="Quantity"/>
-            
-            {/* <div className="priceInput"> */}
             <Input placeholder="Price" className="inputBox"/>
-            {/* </div> */}
-        
            </div>
           <div className="searchBtns">
               
