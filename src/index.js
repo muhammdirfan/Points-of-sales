@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import Dashboard from "./Layout/Dashboard";
 import Routing from "./Navigation";
+
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Dashboard /> */}
     <Routing />
   </React.StrictMode>,
   document.getElementById("root")

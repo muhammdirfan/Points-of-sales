@@ -16,7 +16,14 @@
     margin: 0px;
     width: 100px !important;
 }
-
+.ant-popover-buttons button {
+    margin: 5px !important;
+}
+.ant-popover-buttons {
+    margin-bottom: 4px;
+    text-align: center !important;
+    width: 100% !important;
+}
 .inputBtn{
     width: 80%;
 

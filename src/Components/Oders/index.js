@@ -15,10 +15,12 @@ import {
     } from 'antd';
     import Styles from "./style";
 import { DownOutlined } from '@ant-design/icons';
-import  "./Oders.css"
+import  "./Oders.css";
+
+
 const originData = [];
 
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 2; i++) {
   originData.push({
     key: i.toString(),
     Menu: `Edrward ${i}`,
