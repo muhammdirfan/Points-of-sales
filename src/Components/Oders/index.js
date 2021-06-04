@@ -16,7 +16,7 @@ import {
     import Styles from "./style";
 import { DownOutlined } from '@ant-design/icons';
 import  "./Oders.css";
-
+import {Link} from 'react-router-dom';
 
 const originData = [];
 
@@ -256,7 +256,9 @@ const EditableTable = () => {
       />
 
       <div className="footerBtn">
-        <button>Save</button>
+        <Link to="/dash/sales">
+        <button style={{width: "150px"}}>Save</button>
+        </Link>
         <button>Print</button>
         </div>       
   

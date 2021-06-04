@@ -26,6 +26,12 @@ const Signup = (props) => {
               <input
                 className="input"
                 style={Styles.Input}
+                placeholder="Cell Number"
+                type="number"
+              />
+              <input
+                className="input"
+                style={Styles.Input}
                 placeholder="Email"
                 type="email"
               />
@@ -35,12 +41,7 @@ const Signup = (props) => {
                 placeholder="Password"
                 type="password"
               />
-              <input
-                className="input"
-                style={Styles.Input}
-                placeholder="Confirm Password"
-                type="password"
-              />
+             
               <button style={Styles.SubmitButton} className="submitButton">
                 Sign Up
               </button>

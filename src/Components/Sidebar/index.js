@@ -27,37 +27,37 @@ const Sidebar = (props) => {
             </Menu.Item>
           </Link>
 
-          <Link to="/sales">
+          <Link to="/dash/sales">
             <Menu.Item key="1" icon={props.sideicon1} className="menuItems">
               {props.Sideitem1}
             </Menu.Item>
           </Link>
-          <Link to="/inventory">
+          <Link to="/dash/inventory">
             <Menu.Item key="2" icon={props.sideicon2} className="menuItems">
               {props.Sideitem2}
             </Menu.Item>
           </Link>
-          <Link to="/customer">
+          <Link to="/dash/customer">
             <Menu.Item key="3" icon={props.sideicon3} className="menuItems">
               {props.Sideitem3}
             </Menu.Item>
           </Link>
-          <Link to="/rooms">
+          <Link to="/dash/rooms">
             <Menu.Item key="4" icon={props.sideicon4} className="menuItems">
               {props.Sideitem4}
             </Menu.Item>
           </Link>
-          <Link to="/provider">
+          <Link to="/dash/provider">
             <Menu.Item key="5" icon={props.sideicon5} className="menuItems">
               {props.Sideitem5}
             </Menu.Item>
           </Link>
-          <Link to="/employees">
+          <Link to="/dash/employees">
             <Menu.Item key="6" icon={props.sideicon6} className="menuItems">
               {props.Sideitem6}
             </Menu.Item>
           </Link>
-          <Link to="/billing">
+          <Link to="/dash/billing">
             <Menu.Item key="7" icon={props.sideicon7} className="menuItems">
               {props.Sideitem7}
             </Menu.Item>

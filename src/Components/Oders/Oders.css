@@ -83,7 +83,7 @@ text-align: left;
 }
 
 .ant-input:hover{
-    border: 1px solid rgba(0, 138, 252, 0.822) !important;
+    /* border: 1px solid rgba(0, 138, 252, 0.822) !important; */
 }
 
 .inputBtn button{

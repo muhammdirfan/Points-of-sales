@@ -13,7 +13,7 @@ const Login = (props) => {
     //   alert("Enter you email and passowrd");
     // } else {
     // }
-    history.push("/dashboard");
+    history.push("/dash");
   };
   return (
     <div style={Styles.acBox} className="acBox">

@@ -34,6 +34,7 @@ const Rooms = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         style={Styles.From}
+        className="roomsForm"
       >
         <div>
           <h2 style={Styles.RoomsHeading}>Reservation Details</h2>

@@ -3,6 +3,7 @@ import { Table, Input, Button, Popconfirm, Form, Row, Col } from 'antd';
 import { TabletFilled } from "@ant-design/icons";
 import styles from './style.js';
 import './Sales.css';
+import {Link} from 'react-router-dom';
 
 const EditableContext = React.createContext(null);
 
@@ -229,6 +230,7 @@ class Sales extends React.Component {
               enterButton="Search"
               size="large"
               onSearch={onSearch}
+              className="searchInput"
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={16} xl={16}>
@@ -248,22 +250,27 @@ class Sales extends React.Component {
                   Clear History
                 </Button>
               </Col>
+              <Col>
+              <Link to="/dash/billing">
+               <Button
+                  onClick={this.showModal}
+                  type="primary"
+                  style={styles.hbtn}
+                >
+                  Add New
+                </Button>
+                </Link>
+              </Col>
             </Row>
           </Col>
         </Row>
-        <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={styles.hbtn}
-        >
-          Add a row
-        </Button>
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
           bordered
           dataSource={dataSource}
           columns={columns}
+          style={{marginTop: '50px'}}
         />
       </Row>
       </div>

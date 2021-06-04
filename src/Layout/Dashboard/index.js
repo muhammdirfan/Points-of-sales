@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  useRouteMatch,
+} from "react-router-dom";
 import "./dashboard.css";
 import "antd/dist/antd.css";
 import Styles from "./style.js";
@@ -15,10 +21,7 @@ import Employees from "../../Layout/Dashboard/Childs/Employees";
 import Billing from "../../Layout/Dashboard/Childs/Billing";
 import ChildHome from "../../Layout/Dashboard/Childs/ChildHome/index.js";
 
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from "@ant-design/icons";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import styles from "./style.js";
 
 import Icon0 from "../../assests/icons/dashboard-interface.svg";
@@ -58,6 +61,8 @@ class dashboard extends React.Component {
   };
 
   render() {
+    // let match = useRouteMatch();
+
     const routes = [
       {
         path: "/dash",
@@ -65,31 +70,31 @@ class dashboard extends React.Component {
         child: () => <ChildHome />,
       },
       {
-        path: "/sales",
+        path: "/dash/sales",
         child: () => <Sales />,
       },
       {
-        path: "/inventory",
+        path: "/dash/inventory",
         child: () => <Inventory />,
       },
       {
-        path: "/customer",
+        path: "/dash/customer",
         child: () => <Customer />,
       },
       {
-        path: "/provider",
+        path: "/dash/provider",
         child: () => <Provider />,
       },
       {
-        path: "/rooms",
+        path: "/dash/rooms",
         child: () => <Rooms />,
       },
       {
-        path: "/employees",
+        path: "/dash/employees",
         child: () => <Employees />,
       },
       {
-        path: "/billing",
+        path: "/dash/billing",
         child: () => <Billing />,
       },
     ];
@@ -98,7 +103,7 @@ class dashboard extends React.Component {
         <Layout>
           {/* sidebar starts here */}
           <Sider
-            width='250px'
+            width="250px"
             className="sider"
             breakpoint="lg"
             collapsedWidth="0"
@@ -112,6 +117,7 @@ class dashboard extends React.Component {
             collapsible
             collapsed={this.state.collapsed}
             style={styles.Sider}
+            className="sidebar"
           >
             <Sidebar
               // sideicons
@@ -144,6 +150,7 @@ class dashboard extends React.Component {
             {/* header starts here */}
             <Header style={this.state.navWidth}>
               <Navbar
+                brandName="Hotel"
                 button={React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
                   {
@@ -178,7 +185,7 @@ class dashboard extends React.Component {
           </Layout>
           {/* body layout ends here */}
         </Layout>
-      </Router >
+      </Router>
     );
   }
 }

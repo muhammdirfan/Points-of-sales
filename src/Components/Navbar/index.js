@@ -6,6 +6,7 @@ import Styles from "./style";
 
 // antd
 import { Layout, Menu, Breadcrumb, Row, Col, Dropdown, Card } from "antd";
+import {Link} from 'react-router-dom';
 
 // Icons
 import {
@@ -75,7 +76,9 @@ const menu = (
           </a>
         </Col>
         <Col span={21}>
+          <Link to="/login">
           <a style={Styles.navMenuRow2ankertag}>Sign Out</a>
+          </Link>
         </Col>
       </Row>
     </Card>
@@ -147,7 +150,7 @@ const Navbar = (props) => {
           <ul style={Styles.navUl}>
             <a href="">
               <li>
-                <h1 style={Styles.navHeading}>{props.businessTitle}Hotel</h1>
+                <h1 style={Styles.navHeading}>{props.businessTitle}{props.brandName}</h1>
               </li>
             </a>
           </ul>

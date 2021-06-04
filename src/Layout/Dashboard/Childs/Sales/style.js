@@ -43,8 +43,6 @@ const Styles = {
         fontWeight: '400',
 
     },
-
-
 };
 
 

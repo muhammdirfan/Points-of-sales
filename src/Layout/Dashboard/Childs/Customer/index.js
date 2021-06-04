@@ -4,6 +4,8 @@ import { TabletFilled } from "@ant-design/icons";
 import styles from './style.js';
 import './style.css';
 
+import {Link} from 'react-router-dom';
+
 const EditableContext = React.createContext(null);
 
 const { Search } = Input;
@@ -90,7 +92,7 @@ const EditableCell = ({
 
 const onSearch = (value) => console.log(value);
 
-class Inventory extends React.Component {
+class Customer extends React.Component {
   constructor(props) {
     super(props);
     this.columns = [
@@ -107,7 +109,6 @@ class Inventory extends React.Component {
         dataIndex: 'cnic',
         width: 120,
         key: 'cnic',
-        fixed: 'left',
         editable: true,
       },
       { title: 'Address', dataIndex: 'address', key: '1', width: 200, editable: true, },
@@ -118,13 +119,13 @@ class Inventory extends React.Component {
       { title: 'No of Days', dataIndex: 'days', key: '6', width: 65, editable: true, },
       { title: 'Check-In', dataIndex: 'checkIn', key: '7', width: 100, editable: true, },
       { title: 'Chect-out', dataIndex: 'checkOut', key: '8', width: 100, editable: true, },
-      { title: 'Adults', dataIndex: 'adults', key: '9', width: 45, editable: true, },
+      { title: 'Adults', dataIndex: 'adults', key: '9', width: 50, editable: true, },
       { title: 'Kids', dataIndex: 'kids', key: '10', width: 45, editable: true, },
       { title: 'Total', dataIndex: 'total', key: '11', width: 45, editable: true, },
       { title: 'Room', dataIndex: 'room', key: '12', width: 65, editable: true, },
       {
         title: 'Operation',
-        width: 100,
+        width: 60,
         dataIndex: 'operation',
         fixed: 'right',
         render: (_, record) =>
@@ -261,6 +262,7 @@ class Inventory extends React.Component {
               enterButton="Search"
               size="large"
               onSearch={onSearch}
+              className="searchInput"
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={16} xl={16}>
@@ -280,16 +282,19 @@ class Inventory extends React.Component {
                   Clear History
                 </Button>
               </Col>
+              <Col>
+                <Link to="/dash/rooms">
+                <Button
+                  type="primary"
+                  style={styles.hbtn}
+                >
+                  Add New
+                </Button>
+                </Link>
+                </Col>
             </Row>
           </Col>
         </Row>
-        <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={styles.hbtn}
-        >
-          Add a row
-        </Button>
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
@@ -297,6 +302,7 @@ class Inventory extends React.Component {
           dataSource={dataSource}
           columns={columns}
           scroll={{ x: 2300 }}
+          style={{marginTop: "50px"}}
         />
       </Row>
       </div>
@@ -304,4 +310,4 @@ class Inventory extends React.Component {
   }
 }
 
-export default Inventory;
+export default Customer;
