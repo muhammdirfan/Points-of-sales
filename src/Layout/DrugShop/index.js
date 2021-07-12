@@ -62,6 +62,9 @@ class Dragshop extends React.Component {
     
     // let match = useRouteMatch();
 
+    const username = localStorage.getItem('uname');
+    const email = localStorage.getItem('email');
+
     const routes = [
       {
         path: "/dash",
@@ -124,7 +127,6 @@ class Dragshop extends React.Component {
               sideicon1={<img src={Icon1} className="sideicon" />}
               sideicon2={<img src={Icon2} className="sideicon" />}
               sideicon3={<img src={Icon7} className="sideicon" />}
-              // sideicon4={<img src={Icon4} className="sideicon" />}
               sideicon5={<img src={Icon5} className="sideicon" />}
               sideicon6={<img src={Icon6} className="sideicon" />}
               sideicon7={<img src={Icon3} className="sideicon" />}
@@ -134,7 +136,6 @@ class Dragshop extends React.Component {
               Sideitem2="Inventory Managment"
               Sideitem3="Customer Managment"
               Sideitem5="Provider Managment"
-              // Sideitem4="Rooms Reservation"
               Sideitem6="Employees Managment"
               Sideitem7="Billing order Processing"
             />
@@ -149,6 +150,8 @@ class Dragshop extends React.Component {
             {/* header starts here */}
             <Header style={this.state.navWidth}>
               <Navbar
+              username={username}
+              email={email}
               brandName="Madical Store"
                 button={React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,

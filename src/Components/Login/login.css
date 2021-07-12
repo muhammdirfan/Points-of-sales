@@ -34,3 +34,25 @@
   justify-content: center;
   align-items: center;
 }
+
+.loaderDiv{
+  position: absolute;
+  top: 11%;
+  left: 36%;
+  z-index: 222;
+}
+.messageDiv{
+  position: absolute;
+  top: 15%;
+  left: 39%;
+  z-index: 222;
+  color: red;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #34495a;
+  padding: 40px;
+  border-radius: 20px;
+}
+.Hidden{
+  display: none !important;
+}

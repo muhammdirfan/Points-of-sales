@@ -5,12 +5,7 @@ import Hotelsicon from "../../assests/icons/hotel.svg";
 import Drugstoreicon from "../../assests/icons/pharmacy.svg";
 import Supermarketicon from "../../assests/icons/grocery-cart.svg";
 import {
-  BrowserRouter,
-  Route,
-  Switch,
   Link,
-  Redirect,
-  Router,
 } from "react-router-dom";
 
 const ChooseBuissness = () => {
@@ -23,7 +18,7 @@ const ChooseBuissness = () => {
             <p>You can only select one</p>
           </div>
           <div style={Styles.flex}>
-            <Link to="/login" className="AccountBox-links">
+            <Link to={{pathname:"/login", state:{ id: '1' }}} className="AccountBox-links">
               <div className="Choosebox Choosebox1">
                 <div className="over">
                   <img src={Hotelsicon} height="80px" width="80px" />
@@ -31,7 +26,7 @@ const ChooseBuissness = () => {
                 </div>
               </div>
             </Link>
-            <Link to="/login" className="AccountBox-links">
+            <Link to={{pathname:"/login", state:{ id: '2' } }}className="AccountBox-links">
               <div className="Choosebox Choosebox2">
                 <div className="over">
                   <img src={Drugstoreicon} height="80px" width="80px" />
@@ -39,7 +34,7 @@ const ChooseBuissness = () => {
                 </div>
               </div>
             </Link>
-            <Link to="/login" className="AccountBox-links">
+            <Link to={{pathname:"/login" ,  state:{ id: '3' }}} className="AccountBox-links">
               <div className="Choosebox Choosebox3">
                 <div className="over">
                   <img src={Supermarketicon} height="80px" width="80px" />

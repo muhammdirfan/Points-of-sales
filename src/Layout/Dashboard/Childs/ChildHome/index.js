@@ -60,6 +60,11 @@ const childHome = () => {
               <Cards icon={bill} description={"Billing Management"} />
             </Link>
           </Col>
+          <Col xs={24} sm={22} md={12} lg={8} xl={8} style={styles.cardBox}>
+            <Link to="/dash/roomtype">
+              <Cards icon={bill} description={"Room Type"} />
+            </Link>
+          </Col>
         </Row>
       </Content>
     </Layout>

@@ -6,7 +6,7 @@ import Styles from "./style";
 
 // antd
 import { Layout, Menu, Breadcrumb, Row, Col, Dropdown, Card } from "antd";
-import {Link} from 'react-router-dom';
+import {Link, Redirect, useHistory} from 'react-router-dom';
 
 // Icons
 import {
@@ -24,122 +24,128 @@ import {
 } from "@ant-design/icons";
 
 // Images
-// import Logo from "../../assests/images/ZLogo.png";
 import pc1 from "../../assests/images/ZLogo.png";
 import pc2 from "../../assests/images/avatar.png";
 
 const { Header, Content, Footer } = Layout;
 
-const menu = (
-  <Menu className="helloPakistan">
-    <Card hoverable style={{ width: 240 }}>
-      <Row style={Styles.navCardR1}>
-        <Col span={24}>
-          <img src={pc1} alt="" style={Styles.navCardP1} />
-          <h4 style={Styles.navCardh4}>User Name</h4>
-          <p style={Styles.navCardp}>User Email</p>
-          <p style={Styles.navCardp}>Edit Title</p>
-          <hr style={Styles.navCardhr} />
-        </Col>
-      </Row>
-      <Row style={Styles.navCardR1}>
-        <Col>
-          {" "}
-          <a href="" style={Styles.navCardAnker}>
-            <KeyOutlined style={Styles.navCardicon} className="navMenuRow2" />
-          </a>
-        </Col>
-        <Col>
-          <a href="">
-            <EnvironmentOutlined
-              style={Styles.navCardicon}
-              className="navMenuRow2"
+const Navbar = (props) => {
+
+  // const history = useHistory();
+  const logout = () => {
+  return <Redirect to="/Login" push={true}/>
+  }
+
+  const menu = (
+    <Menu className="helloPakistan">
+      <Card hoverable style={{ width: 240 }}>
+        <Row style={Styles.navCardR1}>
+          <Col span={24}>
+            <img src={pc1} alt="" style={Styles.navCardP1} />
+            <h4 style={Styles.navCardh4}>{props.username}</h4>
+            <p style={Styles.navCardp}>{props.email}</p>
+            <p style={Styles.navCardp}>Edit Title</p>
+            <hr style={Styles.navCardhr} />
+          </Col>
+        </Row>
+        <Row style={Styles.navCardR1}>
+          <Col>
+            {" "}
+            <a href="" style={Styles.navCardAnker}>
+              <KeyOutlined style={Styles.navCardicon} className="navMenuRow2" />
+            </a>
+          </Col>
+          <Col>
+            <a href="">
+              <EnvironmentOutlined
+                style={Styles.navCardicon}
+                className="navMenuRow2"
+              />
+            </a>
+          </Col>
+        </Row>
+  
+        <Row style={Styles.navMenuRow2} className="navMenuRow2">
+          <Col span={3}>
+            <a href="">
+              <SettingFilled style={Styles.navMenuRow2Icon} />
+            </a>
+          </Col>
+          <Col span={21}>
+            <a style={Styles.navMenuRow2ankertag}>Setting</a>
+          </Col>
+        </Row>
+        <Row style={Styles.navMenuRow3} className="navMenuRow2">
+          <Col span={3}>
+            {/* <a href="#"> */}
+              <LoginOutlined style={Styles.navMenuRow2Icon} />
+            {/* </a> */}
+          </Col>
+          <Col span={21}>
+            <Link to="/Login">
+            <span onClick={logout()} style={Styles.navMenuRow2ankertag}>Sign Out</span>
+            </Link>
+          </Col>
+        </Row>
+      </Card>
+    </Menu>
+  );
+
+  const DropdownMenu = (
+    <Card hoverable style={{ width: 190 }} className="DropdownMenuCard2">
+      <Row style={Styles.navDropdownMenuR2}>
+        <Col span={6}>
+          <a href="" style={Styles.navA} style={Styles.navCardR1}>
+            <BellFilled 
+              style={Styles.navicons}
+              style={Styles.navDropdownMenuAnkerTag}
             />
           </a>
         </Col>
-      </Row>
-
-      <Row style={Styles.navMenuRow2} className="navMenuRow2">
-        <Col span={3}>
-          <a href="">
-            <SettingFilled style={Styles.navMenuRow2Icon} />
+        <Col span={18}>
+          <a href="" style={Styles.navDropdownMenuAnkerTag}>
+            Notification
           </a>
         </Col>
-        <Col span={21}>
-          <a style={Styles.navMenuRow2ankertag}>Setting</a>
-        </Col>
       </Row>
-      <Row style={Styles.navMenuRow3} className="navMenuRow2">
-        <Col span={3}>
-          <a href="">
-            <LoginOutlined style={Styles.navMenuRow2Icon} />
+  
+      <Row style={Styles.navDropdownMenuR2}>
+        <Col span={6}>
+          <a href="" style={Styles.navA} style={Styles.navCardR1}>
+          <MailFilled
+              style={Styles.navicons}
+              style={Styles.navDropdownMenuAnkerTag}
+            />
           </a>
         </Col>
-        <Col span={21}>
-          <Link to="/login">
-          <a style={Styles.navMenuRow2ankertag}>Sign Out</a>
-          </Link>
+        <Col span={18}>
+          <a href="" style={Styles.navDropdownMenuAnkerTag}>
+            Message
+          </a>
+        </Col>
+      </Row>
+    
+      <Row style={Styles.navDropdownMenuR2}>
+        <Col span={6}>
+          <a href="" style={Styles.navCardR1}>
+            <Dropdown overlay={menu} trigger={["click"]}>
+              <img
+                src={pc2}
+                alt=""
+                style={Styles.navP}
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+              />
+            </Dropdown>
+          </a>
+        </Col>
+        <Col span={18}>
+            <a style={Styles.navDropdownMenuAnkerTag}>Profile</a>
         </Col>
       </Row>
     </Card>
-  </Menu>
-);
-const DropdownMenu = (
-  <Card hoverable style={{ width: 190 }} className="DropdownMenuCard2">
-    <Row style={Styles.navDropdownMenuR2}>
-      <Col span={6}>
-        <a href="" style={Styles.navA} style={Styles.navCardR1}>
-          <BellFilled 
-            style={Styles.navicons}
-            style={Styles.navDropdownMenuAnkerTag}
-          />
-        </a>
-      </Col>
-      <Col span={18}>
-        <a href="" style={Styles.navDropdownMenuAnkerTag}>
-          Notification
-        </a>
-      </Col>
-    </Row>
+  );
 
-    <Row style={Styles.navDropdownMenuR2}>
-      <Col span={6}>
-        <a href="" style={Styles.navA} style={Styles.navCardR1}>
-        <MailFilled
-            style={Styles.navicons}
-            style={Styles.navDropdownMenuAnkerTag}
-          />
-        </a>
-      </Col>
-      <Col span={18}>
-        <a href="" style={Styles.navDropdownMenuAnkerTag}>
-          Message
-        </a>
-      </Col>
-    </Row>
-  
-    <Row style={Styles.navDropdownMenuR2}>
-      <Col span={6}>
-        <a href="" style={Styles.navCardR1}>
-          <Dropdown overlay={menu} trigger={["click"]}>
-            <img
-              src={pc2}
-              alt=""
-              style={Styles.navP}
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-            />
-          </Dropdown>
-        </a>
-      </Col>
-      <Col span={18}>
-          <a style={Styles.navDropdownMenuAnkerTag}>Profile</a>
-      </Col>
-    </Row>
-  </Card>
-);
-
-const Navbar = (props) => {
   return (
     <Row style={Styles.header}>
       <Col style={Styles.hPart1}>

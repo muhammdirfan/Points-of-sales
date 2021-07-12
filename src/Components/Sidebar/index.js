@@ -62,6 +62,11 @@ const Sidebar = (props) => {
               {props.Sideitem7}
             </Menu.Item>
           </Link>
+          <Link to="/dash/roomtype">
+            <Menu.Item key="8" icon={props.sideicon8} className="menuItems">
+              {props.Sideitem8}
+            </Menu.Item>
+          </Link>
         </Menu>
       </Col>
     </Row>

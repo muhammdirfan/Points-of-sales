@@ -20,6 +20,7 @@ import Rooms from "../../Layout/Dashboard/Childs/Rooms";
 import Employees from "../../Layout/Dashboard/Childs/Employees";
 import Billing from "../../Layout/Dashboard/Childs/Billing";
 import ChildHome from "../../Layout/Dashboard/Childs/ChildHome/index.js";
+import Roomtype from "../../Layout/Dashboard/Childs/Roomtype/index.js";
 
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import styles from "./style.js";
@@ -60,9 +61,13 @@ class dashboard extends React.Component {
     }
   };
 
+
   render() {
     // let match = useRouteMatch();
+    const username = localStorage.getItem('uname');
 
+    const email = localStorage.getItem('email');
+    
     const routes = [
       {
         path: "/dash",
@@ -71,10 +76,12 @@ class dashboard extends React.Component {
       },
       {
         path: "/dash/sales",
+        exact: true,
         child: () => <Sales />,
       },
       {
         path: "/dash/inventory",
+        exact: true,
         child: () => <Inventory />,
       },
       {
@@ -83,20 +90,29 @@ class dashboard extends React.Component {
       },
       {
         path: "/dash/provider",
+        exact: true,
         child: () => <Provider />,
       },
       {
         path: "/dash/rooms",
+        exact: true,
         child: () => <Rooms />,
       },
       {
         path: "/dash/employees",
+        exact: true,
         child: () => <Employees />,
       },
       {
         path: "/dash/billing",
+        exact: true,
         child: () => <Billing />,
       },
+      {
+        path: "/dash/roomtype",
+        exact: true,
+        child: () => <Roomtype />,
+      }
     ];
     return (
       <Router>
@@ -129,6 +145,7 @@ class dashboard extends React.Component {
               sideicon5={<img src={Icon5} className="sideicon" />}
               sideicon6={<img src={Icon6} className="sideicon" />}
               sideicon7={<img src={Icon3} className="sideicon" />}
+              sideicon8={<img src={Icon3} className="sideicon" />}
               // sideItem_names
               Sideitem0="Dashboard"
               Sideitem1="Sales and Reporting"
@@ -138,6 +155,7 @@ class dashboard extends React.Component {
               Sideitem4="Rooms Reservation"
               Sideitem6="Employees Managment"
               Sideitem7="Billing order Processing"
+              Sideitem8="Room Type"
             />
           </Sider>
           {/* sidebar ends here */}
@@ -150,6 +168,8 @@ class dashboard extends React.Component {
             {/* header starts here */}
             <Header style={this.state.navWidth}>
               <Navbar
+              username={username}
+              email={email}
                 brandName="Hotel"
                 button={React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,

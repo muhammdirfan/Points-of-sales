@@ -62,6 +62,9 @@ class shopDashboard extends React.Component {
     
     // let match = useRouteMatch();
 
+    const username = localStorage.getItem('uname');
+    const email = localStorage.getItem('email');
+
     const routes = [
       {
         path: "/dash",
@@ -149,6 +152,8 @@ class shopDashboard extends React.Component {
             {/* header starts here */}
             <Header style={this.state.navWidth}>
               <Navbar
+              username={username}
+              email={email}
               brandName="Shop"
                 button={React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,

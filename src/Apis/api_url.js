@@ -1,4 +1,4 @@
+const api_url = "http://192.168.43.124:4000";
+const api_hotel_url = "http://192.168.43.124:4000/hotel";
 
-const api_url = "http://192.168.1.112:4041";
-
-export default api_url;
+export { api_url, api_hotel_url };
